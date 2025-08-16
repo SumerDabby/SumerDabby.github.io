@@ -1,9 +1,829 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>My Site</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Sumer Dabby — Software Engineer | Shopify, React, Node.js Developer Ludhiana Mohali Punjab</title>
+  <meta name="description"
+    content="Sumer Dabby is a Software Engineer based in Ludhiana, Punjab, India specializing in Shopify app and theme development, React, Node.js, and custom e-commerce solutions. Available for freelance and contract work." />
+  <meta name="keywords"
+    content="Sumer Dabby, Sumer Dabbi, Sumir Dabby, Sumer Dobby, Shopify Developer Sumer, Software Engineer Sumer, Ludhiana, Mohali, Punjab, Shopify Apps, Theme Development, Ecommerce, Freelance, Resume" />
+  <meta name="author" content="Sumer Dabby" />
+  <meta property="og:title" content="Sumer Dabby — Software Engineer & Shopify Expert" />
+  <meta property="og:description"
+    content="3+ years experience in scalable e-commerce solutions, Shopify, React, Node.js. Available for hire or freelance work." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:url" content="https://your-site-url.com" />
+  <meta property="og:image" content="https://i.ibb.co/gTb7ZLd/portfolio-hero-placeholder.png" />
+  <link rel="canonical" href="https://your-site-url.com" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sumer Dabby",
+      "alternateName": ["Sumer Dabbi", "Sumir Dabby", "Sumer Dobby"],
+      "jobTitle": "Software Engineer",
+      "telephone": "+91 9646865149",
+      "email": "sumerdabby123@gmail.com",
+      "url": "https://your-site-url.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/sumer-dabby-03a5b2175"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ludhiana",
+        "addressRegion": "Punjab",
+        "addressCountry": "India"
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+    :root {
+      --bg: #23262b;
+      --panel: #26292f;
+      --text: #f5f5fa;
+      --main: #b489fd;
+      --accent: #e0b7ff;
+      --border: #44454c;
+      --font: 'JetBrains Mono', monospace;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--main);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header,
+    section,
+    footer {
+      max-width: 1050px;
+      margin: auto;
+      padding: 0 1.5em;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 2em 1.5em 0 1.5em;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+      border-bottom: 1px solid #413f58;
+      animation: slideDown 0.6s ease forwards;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: default;
+      user-select: none;
+      letter-spacing: 1.2px;
+      color: var(--main);
+    }
+
+    nav {
+      margin-left: 2em;
+    }
+
+    nav a {
+      margin: 0 0.9em;
+      font-size: 0.95em;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--main);
+      transition: 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .lang {
+      margin-left: 1.5em;
+      font-size: 0.9em;
+      color: #aaa7c8;
+      user-select: none;
+      cursor: default;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 2.5em;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .hero-text {
+      flex: 2;
+      min-width: 280px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .hero-title {
+      font-size: 2.4em;
+      font-weight: 800;
+      margin-bottom: 0.35em;
+      color: var(--text);
+      letter-spacing: 1.2px;
+      line-height: 1.2;
+      user-select: none;
+    }
+
+    .hero-title .highlight {
+      color: var(--main);
+      text-shadow: 0 0 7px var(--main);
+    }
+
+    .hero-desc {
+      font-size: 1em;
+      margin-bottom: 1.8em;
+      color: #b9b9c7cc;
+      max-width: 520px;
+      line-height: 1.5;
+      user-select: text;
+    }
+
+    .hero-buttons {
+      margin-bottom: 1.2em;
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    .btn,
+    .read-more-btn {
+      padding: 0.5em 1.2em;
+      background: var(--main);
+      color: var(--bg);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: var(--font);
+      margin-right: 0.8em;
+      font-size: 1.05em;
+      transition: background var(--transition), color var(--transition);
+      box-shadow: 0 0 10px transparent;
+      user-select: none;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .btn:hover,
+    .read-more-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .btn:focus-visible,
+    .read-more-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .hero-img {
+      flex: 1;
+      text-align: right;
+      min-width: 215px;
+      margin-top: 1em;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .hero-img img {
+      width: 200px;
+      background: #222;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px #17181b;
+      filter: grayscale(0.97);
+      transition: filter 0.5s ease;
+      cursor: default;
+    }
+
+    .hero-img img:hover {
+      filter: none;
+      box-shadow: 0 8px 40px var(--main);
+      transform: translateY(-3px);
+    }
+
+    .tag {
+      background: var(--main);
+      color: var(--bg);
+      font-size: 0.83em;
+      border-radius: 7px;
+      padding: 0.15em 0.9em 0.15em 0.6em;
+      margin-top: 0.55em;
+      display: inline-block;
+      border: 1.5px solid transparent;
+      box-shadow: 0 0 15px transparent;
+      user-select: none;
+      transition: box-shadow 0.4s ease;
+    }
+
+    .tag strong {
+      font-weight: 800;
+      text-shadow: 0 0 3px var(--main);
+    }
+
+    .tag:hover {
+      border-color: var(--main);
+      box-shadow: 0 0 25px var(--main);
+    }
+
+    .quote {
+      margin: 3em 0;
+      padding: 1.2em 1.5em 1.4em 1.8em;
+      background: var(--panel);
+      border-left: 5px solid var(--main);
+      font-size: 1.15em;
+      color: var(--accent);
+      position: relative;
+      user-select: none;
+      font-style: italic;
+      border-radius: 5px;
+      max-width: 720px;
+      animation: slideLeftFadeIn 0.8s ease forwards;
+    }
+
+    .quote:before {
+      content: "“";
+      font-size: 3.8em;
+      color: var(--main);
+      position: absolute;
+      left: 15px;
+      top: 0;
+      opacity: 0.25;
+      user-select: none;
+    }
+
+    .quote-footer {
+      margin-top: 0.55em;
+      font-size: 1em;
+      color: #9b9bbf;
+      text-align: right;
+      font-style: normal;
+      font-weight: 600;
+      font-family: var(--font);
+      user-select: none;
+      letter-spacing: 1.1px;
+    }
+
+    /* Section headers */
+    .section-title {
+      font-size: 1.4em;
+      margin-bottom: 1.3em;
+      color: var(--main);
+      font-family: var(--font);
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      user-select: none;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 0.6em;
+      max-width: max-content;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* Projects grid */
+    .projects-grid {
+      display: flex;
+      gap: 2em;
+      margin-bottom: 2.5em;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .project-card {
+      background: var(--panel);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.3em 1.3em 1.7em 1.3em;
+      width: 305px;
+      min-width: 240px;
+      flex: 1 1 220px;
+      transition: border var(--transition), box-shadow var(--transition),
+        transform 0.3s ease;
+      box-shadow: 0 3px 15px #18192122;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 1.8em;
+      cursor: default;
+    }
+
+    .project-card:hover {
+      border-color: var(--main);
+      box-shadow: 0 10px 28px #3f1e7d63;
+      transform: translateY(-6px);
+    }
+
+    .project-title {
+      font-size: 1.1em;
+      font-weight: 700;
+      margin: 0.12em 0 0.65em 0;
+      color: var(--text);
+      user-select: text;
+      letter-spacing: 0.5px;
+    }
+
+    .project-desc {
+      font-size: 0.95em;
+      color: #cccdd9dd;
+      margin-bottom: 1.2em;
+      line-height: 1.3;
+      user-select: text;
+    }
+
+    .project-btns {
+      margin-top: auto;
+    }
+
+    .live-btn,
+    .cache-btn {
+      padding: 0.28em 0.94em;
+      margin-right: 0.7em;
+      border-radius: 6px;
+      border: 1.4px solid var(--main);
+      color: var(--main);
+      background: transparent;
+      font-family: var(--font);
+      font-size: 0.98em;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition),
+        transform 0.23s ease;
+      box-shadow: 0 0 10px transparent;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      user-select: none;
+    }
+
+    .live-btn:hover,
+    .cache-btn:hover {
+      background: var(--main);
+      color: var(--bg);
+      transform: scale(1.06);
+      box-shadow: 0 0 15px var(--main);
+    }
+
+    .cache-btn {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .cache-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: flex;
+      gap: 2em;
+      flex-wrap: wrap;
+      margin-bottom: 2.5em;
+      margin-top: 1.2em;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .skill-col {
+      background: var(--panel);
+      border-radius: 10px;
+      padding: 1.3em 1.4em;
+      min-width: 120px;
+      border: 1px solid var(--border);
+      font-size: 1em;
+      flex: 1 1 140px;
+      user-select: text;
+      letter-spacing: 0.4px;
+      box-shadow: 0 0 6px transparent;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .skill-col:hover {
+      box-shadow: 0 0 15px var(--main);
+    }
+
+    .skill-col strong {
+      color: var(--main);
+      font-weight: 800;
+      user-select: none;
+      font-size: 1.05em;
+    }
+
+    .other-skills {
+      margin-top: 0.7em;
+    }
+
+    /* About/Contacts */
+    .about-text,
+    .contacts-text {
+      background: var(--panel);
+      border-radius: 10px;
+      padding: 1.5em 1.5em;
+      margin-bottom: 2.5em;
+      border: 1.5px solid var(--border);
+      color: #cdcfe6cc;
+      font-size: 1.05em;
+      line-height: 1.6;
+      user-select: text;
+      max-width: 900px;
+      animation: fadeInUp 1.4s ease forwards;
+      opacity: 0;
+      animation-delay: 0.45s;
+    }
+
+    .contact-options {
+      margin: 1em 0 0 0;
+    }
+
+    .contact-box {
+      background: var(--panel);
+      border-radius: 10px;
+      padding: 1em 1.1em;
+      border: 1.5px solid var(--border);
+      font-size: 1em;
+      margin-top: 0.8em;
+      display: inline-block;
+      user-select: text;
+      transition: border-color 0.3s ease;
+      cursor: default;
+    }
+
+    .contact-box:hover {
+      border-color: var(--main);
+      box-shadow: 0 0 18px var(--main);
+    }
+
+    .contact-box .icon {
+      font-size: 1.4em;
+      margin-right: 0.5em;
+      vertical-align: middle;
+      user-select: none;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 3em;
+      font-size: 0.97em;
+      color: #b3b3c4;
+      border-top: 1.6px solid #3a3858;
+      padding: 2em 1.5em 1.3em 1.5em;
+      background: var(--panel);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .footer-title {
+      font-weight: 700;
+      color: var(--main);
+      font-size: 1.05em;
+      margin-bottom: 0.15em;
+    }
+
+    .footer-contact {
+      font-size: 1em;
+      color: #cdcfe6b7;
+    }
+
+    .footer-media a {
+      color: var(--main);
+      margin-right: 1em;
+      font-size: 1.4em;
+      vertical-align: middle;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    .footer-media a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      header,
+      section,
+      footer {
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+      }
+
+      .projects-grid,
+      .skills-grid {
+        flex-direction: column;
+        gap: 1.4em;
+      }
+
+      .project-card,
+      .skill-col {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-img {
+        text-align: center;
+        margin-top: 0.7em;
+      }
+
+      nav a {
+        margin: 0 0.5em;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideLeftFadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, World!</h1>
+  <header>
+    <span class="logo">🛠️ Sumer Dabby</span>
+    <nav>
+      <a href="#home" onclick="scrollToSec(event, 'home')" class="active">home</a>
+      <a href="#projects" onclick="scrollToSec(event, 'projects')">works</a>
+      <a href="#about" onclick="scrollToSec(event, 'about')">about-me</a>
+      <a href="#contacts" onclick="scrollToSec(event, 'contacts')">contacts</a>
+      <span class="lang">EN</span>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-title">
+          Sumer Dabby — <span class="highlight">Software Engineer</span> <br />
+          Expert in <span class="highlight">Shopify, React, Node.js</span>
+        </div>
+        <div class="hero-desc">
+          3+ years delivering scalable, user-focused solutions. Specializing in Shopify app/theme development, checkout optimization,
+          custom integrations, and front-end/backend technologies. Ludhiana & Mohali, Punjab, India.
+        </div>
+        <div class="hero-buttons">
+          <a class="btn" href="mailto:sumerdabby123@gmail.com">Contact me !!</a>
+          <a class="btn" href="https://www.linkedin.com/in/sumer-dabby-03a5b2175" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <div class="tag">
+          ■ Available for <strong>freelance and full-time opportunities</strong>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="https://i.ibb.co/gTb7ZLd/portfolio-hero-placeholder.png" alt="Sumer Dabby Portfolio" />
+      </div>
+    </div>
+    <div class="quote">
+      With great power comes great electricity bill
+      <div class="quote-footer">– Dr. Who</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">#projects</div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://i.ibb.co/yNXqRZB/chertnodes-thumb.png" alt="Shopify App Dev"
+          style="border-radius:5px; width:100%; margin-bottom:0.8em;" />
+        <div class="project-title">Shopify Custom App Development</div>
+        <div class="project-desc">
+          Build custom functionality for your Shopify store — streamlined checkout, product customization, integrations. Tech: React,
+          Node.js, Shopify APIs.
+        </div>
+        <div class="project-btns">
+          <a href="mailto:sumerdabby123@gmail.com" class="live-btn" aria-label="Inquire about Shopify Custom App Development">Enquire</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://i.ibb.co/2PjnWgT/protectx-thumb.png" alt="Checkout Optimization"
+          style="border-radius:5px; width:100%; margin-bottom:0.8em;" />
+        <div class="project-title">Checkout Optimization & Integrations</div>
+        <div class="project-desc">
+          Enhanced revenue by integrating scalable backend, improving response time and UX. Tech: Node.js, React, APIs, Liquid.
+        </div>
+        <div class="project-btns">
+          <a href="mailto:sumerdabby123@gmail.com" class="live-btn" aria-label="Inquire about Checkout Optimization">Enquire</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://i.ibb.co/k2cnd6j/kahoot-thumb.png" alt="Ecommerce Theme Dev"
+          style="border-radius:5px; width:100%; margin-bottom:0.8em;" />
+        <div class="project-title">Shopify Theme/Ecommerce Site</div>
+        <div class="project-desc">
+          Design and develop modern, conversion-focused Shopify themes. Tech: HTML5, CSS3, JavaScript, Liquid, Shopify Plus.
+        </div>
+        <div class="project-btns">
+          <a href="mailto:sumerdabby123@gmail.com" class="live-btn" aria-label="Inquire about Shopify Theme Development">Enquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">#skills</div>
+    <div class="skills-grid">
+      <div class="skill-col"><strong>Languages</strong>
+        <div>HTML5, CSS3, JavaScript, PHP, MySQL, Liquid, TypeScript</div>
+      </div>
+      <div class="skill-col"><strong>Frameworks</strong>
+        <div>React, Node.js, Remix, Prisma, Express.js, Shopify Plus</div>
+      </div>
+      <div class="skill-col"><strong>Tools</strong>
+        <div>Git, CorelDraw, Photoshop, VSCode, XFCE, Arch Linux</div>
+      </div>
+      <div class="skill-col"><strong>Other</strong>
+        <div>Custom Shopify App Dev, Theme Customization, API integrations</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">#about-me</div>
+    <div class="about-text">
+      Hello, I'm <strong>Sumer Dabby</strong>!<br /><br />
+      Software Engineer at Tech Prastish with 3+ years experience delivering scalable solutions for businesses. I specialize in Shopify
+      app and theme development, checkout optimization, integrations, and front-end/backend technologies.<br /><br />
+      <strong>Experience:</strong><br />
+      • <u>Tech Prastish</u> Software Engineer (Apr 2022–Present): Delivered multiple software projects exceeding client expectations,
+      optimized performance and scalability, and received management recognition.<br />
+      • <u>Solitaire Infosys</u> Intern (Jan 2022–Mar 2022): Delivered successful projects and contributed to collaborative solutions.<br /><br />
+      <strong>Education:</strong><br />
+      • B-Tech (Computer Science & Engineering), RIMT University, 2018-2022<br />
+      • 12th (Non-Medical), Atam Devki Niketan School, 2017-2018<br /><br />
+      Let's collaborate to maximize your business's growth and success with tailored software solutions!
+      <br />
+      <button class="read-more-btn" onclick="window.open('https://www.linkedin.com/in/sumer-dabby-03a5b2175', '_blank')"
+        aria-label="Open LinkedIn Profile">View LinkedIn →</button>
+    </div>
+    <div class="hero-img" style="margin-top:-2em;">
+      <img src="https://i.ibb.co/gTb7ZLd/portfolio-hero-placeholder.png" alt="Sumer Dabby" style="width:170px;" />
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="section-title">#contacts</div>
+    <div class="contacts-text">
+      <strong>Contact Details:</strong><br />
+      <div class="contact-options">
+        <div class="contact-box">
+          <span class="icon" aria-hidden="true">📞</span> +91 9646865149
+        </div>
+        <div class="contact-box">
+          <span class="icon" aria-hidden="true">📧</span> <a href="mailto:sumerdabby123@gmail.com">sumerdabby123@gmail.com</a>
+        </div>
+        <div class="contact-box">
+          <span class="icon" aria-hidden="true">🔗</span> <a href="https://www.linkedin.com/in/sumer-dabby-03a5b2175"
+            target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <br />
+      I'm open for freelance opportunities or full-time collaboration. Let's work together!
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <div class="footer-title">🛠️ Sumer Dabby</div>
+      <div class="footer-contact">
+        sumerdabby123@gmail.com<br />
+        Software Engineer · Ludhiana / Mohali, Punjab, India
+      </div>
+    </div>
+    <div>
+      <div class="footer-title">Media</div>
+      <div class="footer-media">
+        <a href="https://www.linkedin.com/in/sumer-dabby-03a5b2175" target="_blank" title="LinkedIn"
+          rel="noopener noreferrer">in</a>
+        <a href="mailto:sumerdabby123@gmail.com" title="Gmail">✉</a>
+      </div>
+    </div>
+    <div style="flex: 1;"></div>
+    <div>
+      <div style="font-size: 0.89em; color: #bbb;">
+        &copy; Copyright 2025. Made by Sumer Dabby
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll to sections and active nav link highlight
+    const navLinks = document.querySelectorAll('nav a');
+
+    function scrollToSec(e, id) {
+      e.preventDefault();
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      navLinks.forEach(link => link.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+    }
+
+    // Intersection observer to highlight active nav on scroll
+    const sections = document.querySelectorAll('section');
+    const observerOptions = { rootMargin: '-50% 0px -50% 0px' };
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
+
 </html>
