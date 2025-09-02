@@ -526,30 +526,29 @@
       box-shadow: var(--shadow);
     }
 
-    .close-modal {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background: var(--main);
-      border: none;
-      color: var(--bg);
-      font-size: 1.5rem;
-      font-weight: bold;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all var(--transition);
-      box-shadow: var(--shadow);
-    }
+.close-modal {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    color: var(--main);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    /* box-shadow: var(--shadow); */
+}
 
-    .close-modal:hover {
-      background: var(--accent);
-      transform: scale(1.1);
-    }
+ .close-modal:hover {
+    transform: scale(1.1);
+}
 
     /* Form styles for contact modal */
     .modal-content h2 {
