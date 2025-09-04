@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sumer Dabby - Freelance Web Developer",
+  "description": "Professional Shopify and React development services in Punjab, India",
+  "url": "https://sumerdabby.github.io/",
+  "telephone": "+91-9646865149",
+  "email": "sumerdabby123@gmail.com",
+  "priceRange": "$$",
+  "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+  "currenciesAccepted": "INR",
+  "areaServed": [
+    {
+      "@type": "State",
+      "name": "Punjab",
+      "containedInPlace": {"@type": "Country", "name": "India"}
+    }
+  ],
+  "serviceType": [
+    "Shopify Development",
+    "Web Application Development",
+    "E-commerce Solutions",
+    "Custom Theme Development",
+    "React Development",
+    "Node.js Development"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ludhiana",
+    "addressRegion": "Punjab",
+    "addressCountry": "India"
+  },
+  "geo": {"@type": "GeoCoordinates", "latitude": "30.9010", "longitude": "75.8573"}
+}
+
+

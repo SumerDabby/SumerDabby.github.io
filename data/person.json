@@ -1,0 +1,80 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sumer Dabby",
+  "alternateName": [
+    "Sumer Dabbi",
+    "Sumir Dabby",
+    "Sumer Dobby"
+  ],
+  "jobTitle": "Software Engineer",
+  "description": "Expert Shopify developer with 3+ years experience in e-commerce solutions, React, Node.js, and web application development",
+  "url": "https://sumerdabby.github.io/",
+  "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/sumerdabby.jpg?v=1755369303",
+  "telephone": "+91-9646865149",
+  "email": "sumerdabby123@gmail.com",
+  "gender": "Male",
+  "nationality": "Indian",
+  "knowsLanguage": [
+    "English",
+    "Hindi",
+    "Punjabi"
+  ],
+  "knowsAbout": [
+    "Shopify Development",
+    "React.js",
+    "Node.js",
+    "JavaScript",
+    "E-commerce Solutions",
+    "Web Development",
+    "Frontend Development",
+    "Backend Development",
+    "Software Engineering"
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Software Engineer",
+    "occupationLocation": {
+      "@type": "City",
+      "name": "Ludhiana",
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Punjab",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "India"
+        }
+      }
+    }
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Tech Prastish",
+    "url": "https://techprastish.com"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "RIMT University",
+    "location": "Punjab, India"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ludhiana",
+    "addressRegion": "Punjab",
+    "addressCountry": "India",
+    "postalCode": "141001"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/sumer-dabby-03a5b2175",
+    "https://github.com/sumerdabby",
+    "mailto:sumerdabby123@gmail.com"
+  ],
+  "seeks": "Freelance opportunities and full-time positions in web development",
+  "availableLanguage": [
+    "en",
+    "hi",
+    "pa"
+  ]
+}
+
+

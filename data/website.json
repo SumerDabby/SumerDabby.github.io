@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Sumer Dabby Portfolio",
+  "alternateName": "Sumer Dabby Developer Portfolio",
+  "url": "https://sumerdabby.github.io/",
+  "description": "Professional portfolio of Sumer Dabby - Expert Shopify and React developer from Punjab, India",
+  "inLanguage": "en-IN",
+  "isAccessibleForFree": true,
+  "creator": {"@type": "Person", "name": "Sumer Dabby"},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://sumerdabby.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+
+

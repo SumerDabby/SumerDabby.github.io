@@ -1,0 +1,40 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does Sumer Dabby offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sumer Dabby offers Shopify app development, custom theme development, e-commerce solutions, React and Node.js web applications, checkout optimization, and technical consulting services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is Sumer Dabby located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sumer Dabby is based in Ludhiana and Mohali, Punjab, India, and provides services locally and internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Sumer Dabby's experience level?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sumer Dabby has 3+ years of professional experience in software development, specializing in Shopify development, React, Node.js, and modern web technologies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Sumer Dabby available for hire?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Sumer Dabby is currently available for freelance projects and full-time opportunities. Contact via email at sumerdabby123@gmail.com or phone at +91 9646865149."
+      }
+    }
+  ]
+}
+
+
