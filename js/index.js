@@ -340,3 +340,80 @@ if ('serviceWorker' in navigator) {
     processIncludes()
   }
 })()
+
+// Render projects from JSON data
+;(function renderProjectsFromJson () {
+  async function loadProjects () {
+    try {
+      const res = await fetch('./data/projects.json')
+      if (!res.ok) return []
+      return res.json()
+    } catch (e) {
+      return []
+    }
+  }
+
+  function createProjectCard (p) {
+    const features = (p.features || [])
+      .map(f => `<li>${f}</li>`)
+      .join('')
+    const tags = (p.tags || [])
+      .map(t => `<span class="project-tag">${t}</span>`)
+      .join('')
+    return `
+      <article class="project-card" data-category="${p.category || ''}">
+        <img src="${p.image}" alt="${p.alt || ''}" class="project-image preview-image" width="300" height="220" loading="lazy" decoding="async">
+        <h3 class="project-title">${p.title}</h3>
+        <div class="project-meta">${tags}</div>
+        <p class="project-description">${p.description}</p>
+        ${features ? `<div class="project-features"><h4>${p.featuresTitle || 'Features:'}</h4><ul>${features}</ul></div>` : ''}
+        <div class="project-buttons">
+          <button type="button" class="btn btn-small connect-now-btn" aria-label="Connect now to discuss the project">Connect Now</button>
+        </div>
+      </article>
+    `
+  }
+
+  async function init () {
+    const grid = document.querySelector('.projects-grid')
+    if (!grid) return
+    const projects = await loadProjects()
+    if (!projects.length) return
+    grid.innerHTML = projects.map(createProjectCard).join('')
+    // Re-bind preview and inquiry buttons added dynamically
+    document.querySelectorAll('.preview-image').forEach(elem => {
+      elem.addEventListener('click', function (e) {
+        e.preventDefault()
+        const imageModal = document.getElementById('imagePreviewModal')
+        const modalImage = document.getElementById('modalImage')
+        const closeImageModalBtn = imageModal.querySelector('.close-modal')
+        modalImage.src = this.src
+        modalImage.alt = this.alt
+        imageModal.style.display = 'flex'
+        imageModal.setAttribute('aria-hidden', 'false')
+        closeImageModalBtn.focus()
+        document.body.style.overflow = 'hidden'
+      })
+    })
+    document.querySelectorAll('.connect-now-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const inquiryModal = document.getElementById('projectInquiryModal')
+        inquiryModal.style.display = 'flex'
+        inquiryModal.setAttribute('aria-hidden', 'false')
+        document.body.style.overflow = 'hidden'
+        const formStatus = document.getElementById('formStatus')
+        const form = document.getElementById('inquiryForm')
+        formStatus.textContent = ''
+        formStatus.className = ''
+        form.reset()
+        document.getElementById('nameInput').focus()
+      })
+    })
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init)
+  } else {
+    init()
+  }
+})()

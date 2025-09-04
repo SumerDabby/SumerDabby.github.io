@@ -1,0 +1,98 @@
+[
+  {
+    "id": "advanced-ecommerce-platform",
+    "title": "The MasterMinders – Event Ticketing (Shopify)",
+    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Frame_1171275357.png?v=1756843348",
+    "alt": "Event ticketing landing page with countdown bar, 4.8 Trustpilot rating, gradient hero copy 'It’s time to stop Googling growth strategies', and a 'Buy Tickets' CTA next to a group photo.",
+    "description": "Conversion-focused Shopify event site with urgency messaging, social proof, and streamlined checkout for ticket sales.",
+    "tags": ["Shopify", "Online Store 2.0", "Theme", "Liquid", "JavaScript", "Trustpilot", "Countdown"],
+    "featuresTitle": "Key Features:",
+    "features": [
+      "Urgency bar with live countdown and limited seats messaging",
+      "Trustpilot badge integration near hero",
+      "Primary 'Buy Tickets' CTA mapped to a fast checkout",
+      "Event IA: About, Pricing, Schedule, Exhibitors, FAQ"
+    ],
+    "category": "Shopify"
+  },
+  {
+    "id": "custom-shopify-apps-suite",
+    "title": "Daily Furniture – Lifestyle Storefront (Shopify)",
+    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_013551.png?v=1756843581",
+    "alt": "Furniture homepage with two mustard sofas, headline 'Timeless Style, Lasting Comfort', persistent offer strip, and 'Shop Now' CTA.",
+    "description": "Lifestyle-first Shopify theme emphasizing visual merchandising, offer communication, and clear category navigation.",
+    "tags": ["Shopify", "Online Store 2.0", "Theme", "Liquid", "Performance", "SEO"],
+    "featuresTitle": "Storefront Features:",
+    "features": [
+      "Hero section with lifestyle imagery and primary CTA",
+      "Top promo strip for limited-time offers",
+      "Category navigation with search/account/cart",
+      "Clean layout optimized for content and SEO"
+    ],
+    "category": "Shopify"
+  },
+  {
+    "id": "business-analytics-dashboard",
+    "title": "Millie & Jones – Beds & Mattresses (Shopify)",
+    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_021440.png?v=1756845894",
+    "alt": "Back-to-school sale hero with red loft bed, countdown bar (days, hours, minutes, seconds), BNPL Klarna, warranty strip, and Trustpilot reviews.",
+    "description": "Promotion-led Shopify storefront combining urgency, BNPL, warranty, and verified reviews for high trust and conversion.",
+    "tags": ["Shopify", "Online Store 2.0", "Theme", "Trustpilot", "Klarna", "Promotions"],
+    "featuresTitle": "Commerce Features:",
+    "features": [
+      "Granular countdown timer for time-boxed sales",
+      "BNPL (Klarna) and five-year guarantee badges",
+      "Verified review cards surfaced on homepage",
+      "Category-first IA (Kids Beds, Teen Beds, etc.)"
+    ],
+    "category": "Shopify"
+  },
+  {
+    "id": "scalable-mobile-backend",
+    "title": "Silent Moment – Spa & Memberships (Shopify)",
+    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_021634.png?v=1756846008",
+    "alt": "Spa homepage with full-bleed massage imagery, 'Book Now' CTA, and nav for Spa Treatments, Gift Cards, Locations, and Memberships.",
+    "description": "Service-forward Shopify site with booking integration, giftable SKUs, and recurring value through memberships.",
+    "tags": ["Shopify", "Online Store 2.0", "Theme", "Appointments", "Gift Cards", "Memberships"],
+    "featuresTitle": "Service Features:",
+    "features": [
+      "Hero-level booking CTA integrated into the flow",
+      "Gift cards and memberships as first-class nav items",
+      "Wellness imagery for brand storytelling",
+      "Multi-location readiness via dedicated Locations nav"
+    ],
+    "category": "Shopify"
+  },
+  {
+    "id": "multi-platform-integration-hub",
+    "title": "LegalTech Compliance & Research Platform (MERN)",
+    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_022042.png?v=1756846254",
+    "alt": "Legal research homepage with login card, webinar hero 'Microsoft Word for Lawyers', and product tiles for practice management, compliance, contracts, and academy.",
+    "description": "MERN-based LegalTech platform combining database search, analytics, compliance workflows, and training modules for law practices and corporate teams.",
+    "tags": ["MongoDB", "Express.js", "React", "Node.js", "RBAC", "Full-text search", "REST API"],
+    "featuresTitle": "MERN Features:",
+    "features": [
+      "Role-based authentication with enterprise/IP access",
+      "Indexed database search with filters and analytics",
+      "Modular apps for practice management, compliance, contracts",
+      "Events/webinar CMS for training and user education"
+    ],
+    "category": "MERN"
+  },
+  {
+    "id": "premium-shopify-themes",
+    "title": "AI Chat SaaS Landing (MERN)",
+    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_022425.png?v=1756846477",
+    "alt": "AI assistant landing with headline introducing DeftGPT, a free trial CTA, laptop chat UI, and model badges for Claude, GPT-4, Llama 2, and Gemini-pro.",
+    "description": "SaaS marketing site and app shell for a multi-model AI assistant with free trial, authentication, and credits-based usage.",
+    "tags": ["MongoDB", "Express.js", "React", "Node.js", "OAuth 2.0", "Stripe", "Rate limiting"],
+    "featuresTitle": "MERN Highlights:",
+    "features": [
+      "OAuth login, free trial gating, and subscription billing",
+      "Model routing layer with per-model credit tracking",
+      "Responsive marketing pages (Features, Pricing, Affiliate, Blog)",
+      "Chat UI scaffold with document and prompt workflows"
+    ],
+    "category": "MERN"
+  }
+]
