@@ -1,0 +1,32 @@
+<!-- Common Button Component -->
+<!-- Usage: <div data-include="./components/common/button.html" data-variant="primary" data-text="Click Me" data-icon="✉️"></div> -->
+
+<button class="btn btn-{variant}" aria-label="{text}">
+  {icon && `<span aria-hidden="true">{icon}</span>`}
+  <span>{text}</span>
+</button>
+
+<script>
+// Button component logic
+document.addEventListener('DOMContentLoaded', function() {
+  const buttonPlaceholders = document.querySelectorAll('[data-include*="button.html"]');
+  buttonPlaceholders.forEach(placeholder => {
+    const variant = placeholder.getAttribute('data-variant') || 'primary';
+    const text = placeholder.getAttribute('data-text') || 'Button';
+    const icon = placeholder.getAttribute('data-icon') || '';
+    const href = placeholder.getAttribute('data-href');
+    
+    const buttonHTML = `
+      ${href ? '<a href="' + href + '"' : '<button'}
+      class="btn btn-${variant}" 
+      ${href ? '' : 'type="button"'}
+      aria-label="${text}">
+        ${icon ? `<span aria-hidden="true">${icon}</span>` : ''}
+        <span>${text}</span>
+      ${href ? '</a>' : '</button>'}
+    `;
+    
+    placeholder.outerHTML = buttonHTML;
+  });
+});
+</script>

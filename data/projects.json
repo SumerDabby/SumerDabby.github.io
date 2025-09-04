@@ -16,6 +16,22 @@
     "category": "Shopify"
   },
   {
+    "id": "premium-shopify-themes",
+    "title": "AI Chat SaaS Landing (MERN)",
+    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_022425.png?v=1756846477",
+    "alt": "AI assistant landing with headline introducing DeftGPT, a free trial CTA, laptop chat UI, and model badges for Claude, GPT-4, Llama 2, and Gemini-pro.",
+    "description": "SaaS marketing site and app shell for a multi-model AI assistant with free trial, authentication, and credits-based usage.",
+    "tags": ["MongoDB", "Express.js", "React", "Node.js", "OAuth 2.0", "Stripe", "Rate limiting"],
+    "featuresTitle": "MERN Highlights:",
+    "features": [
+      "OAuth login, free trial gating, and subscription billing",
+      "Model routing layer with per-model credit tracking",
+      "Responsive marketing pages (Features, Pricing, Affiliate, Blog)",
+      "Chat UI scaffold with document and prompt workflows"
+    ],
+    "category": "MERN"
+  },
+  {
     "id": "custom-shopify-apps-suite",
     "title": "Daily Furniture – Lifestyle Storefront (Shopify)",
     "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_013551.png?v=1756843581",
@@ -78,21 +94,6 @@
       "Events/webinar CMS for training and user education"
     ],
     "category": "MERN"
-  },
-  {
-    "id": "premium-shopify-themes",
-    "title": "AI Chat SaaS Landing (MERN)",
-    "image": "https://cdn.shopify.com/s/files/1/0642/3881/3282/files/Screenshot_2025-09-03_022425.png?v=1756846477",
-    "alt": "AI assistant landing with headline introducing DeftGPT, a free trial CTA, laptop chat UI, and model badges for Claude, GPT-4, Llama 2, and Gemini-pro.",
-    "description": "SaaS marketing site and app shell for a multi-model AI assistant with free trial, authentication, and credits-based usage.",
-    "tags": ["MongoDB", "Express.js", "React", "Node.js", "OAuth 2.0", "Stripe", "Rate limiting"],
-    "featuresTitle": "MERN Highlights:",
-    "features": [
-      "OAuth login, free trial gating, and subscription billing",
-      "Model routing layer with per-model credit tracking",
-      "Responsive marketing pages (Features, Pricing, Affiliate, Blog)",
-      "Chat UI scaffold with document and prompt workflows"
-    ],
-    "category": "MERN"
   }
+
 ]
