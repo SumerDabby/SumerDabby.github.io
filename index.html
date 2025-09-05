@@ -83,11 +83,11 @@
   <!-- Skip to main content for accessibility -->
   <a href="#main" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
 
-  <div data-include="./components/header/header-default.html"></div>
+  <div data-include="./components/header/index.html"></div>
 
   <main id="main" role="main">
     <!-- Hero Section -->
-    <div data-include="./components/homePage/heroSection.html"></div>
+    <div data-include="./components/sections/hero/index.html"></div>
 
     <!-- Quote Section -->
     <section class="quote" role="complementary">
@@ -98,74 +98,13 @@
     <!-- Main Content Area -->
     <div class="main-content">
       <!-- Projects Section -->
-      <section id="projects" class="section" aria-labelledby="projects-title">
-        <h2 id="projects-title" class="section-title">Featured Projects</h2>
-        <div class="projects-grid"></div>
-      </section>
+      <div data-include="./components/sections/projects/index.html"></div>
 
       <!-- Process Section -->
-      <div data-include="./components/sections/process.html"></div>
+      <div data-include="./components/sections/process/index.html"></div>
 
       <!-- Skills Section -->
-      <section id="skills" class="section" aria-labelledby="skills-title">
-        <h2 id="skills-title" class="section-title">Technical Skills</h2>
-
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3 class="skill-title">Frontend Development</h3>
-            <div class="skills-list">
-              <span class="skill-tag">React.js</span>
-              <span class="skill-tag">Next.js</span>
-              <span class="skill-tag">JavaScript ES6+</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3/SASS</span>
-              <span class="skill-tag">Tailwind CSS</span>
-              <span class="skill-tag">Responsive Design</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-title">Backend Development</h3>
-            <div class="skills-list">
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Express.js</span>
-              <span class="skill-tag">MongoDB</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">REST APIs</span>
-              <span class="skill-tag">GraphQL</span>
-              <span class="skill-tag">Prisma</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-title">Shopify Ecosystem</h3>
-            <div class="skills-list">
-              <span class="skill-tag">Shopify Plus</span>
-              <span class="skill-tag">Custom Apps</span>
-              <span class="skill-tag">Storefront API</span>
-              <span class="skill-tag">Admin API</span>
-              <span class="skill-tag">Webhooks</span>
-              <span class="skill-tag">Liquid Templating</span>
-              <span class="skill-tag">Theme Development</span>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="skill-title">Tools & Technologies</h3>
-            <div class="skills-list">
-              <span class="skill-tag">Git/GitHub</span>
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">Postman</span>
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">Photoshop</span>
-              <span class="skill-tag">CorelDraw</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div data-include="./components/sections/skills/index.html"></div>
 
       <!-- GitHub Projects Section -->
       <!-- <div data-include="./components/sections/github-projects.html"></div> -->
@@ -177,190 +116,22 @@
       <!-- <div data-include="./components/sections/testimonials.html"></div> -->
 
       <!-- About Section -->
-      <section id="about" class="section" aria-labelledby="about-title">
-        <h2 id="about-title" class="section-title">About Me</h2>
-
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              Hello! I'm <strong>Sumer Dabby</strong>, a passionate Software Engineer with over 4 years of experience
-              creating scalable, user-focused web solutions. Currently working at Tech Prastish, I specialize in
-              Shopify development, modern JavaScript frameworks, and e-commerce solutions.
-            </p>
-
-            <h3>Professional Experience</h3>
-            <div class="experience-item">
-              <h4>Software Engineer - Tech Prastish</h4>
-              <p class="experience-duration">April 2022 - Present</p>
-              <ul>
-                <li>Delivered 20+ successful Shopify projects with 98% client satisfaction rate</li>
-                <li>Optimized checkout processes resulting in 25% increase in conversion rates</li>
-                <li>Led development of custom Shopify apps serving 10,000+ monthly users</li>
-                <li>Mentored junior developers and established code review processes</li>
-              </ul>
-            </div>
-
-            <div class="experience-item">
-              <h4>Software Development Intern - Solitaire Infosys</h4>
-              <p class="experience-duration">January 2022 - March 2022</p>
-              <ul>
-                <li>Contributed to collaborative web development projects</li>
-                <li>Gained hands-on experience with React and Node.js</li>
-                <li>Participated in agile development processes</li>
-              </ul>
-            </div>
-
-            <h3>Education</h3>
-            <div class="education-item">
-              <h4>B.Tech - Computer Science & Engineering</h4>
-              <p>RIMT University, Punjab (2018-2022)</p>
-            </div>
-
-            <div class="cta-section">
-              <p>Ready to bring your ideas to life? Let's collaborate and create something amazing together!</p>
-              <button type="button" class="btn lets-work-together-btn" aria-label="Open project inquiry form popup">
-                Let's Work Together
-              </button>
-            </div>
-          </div>
-
-          <div class="about-image">
-            <img src="https://cdn.shopify.com/s/files/1/0642/3881/3282/files/sumerdabby.jpg?v=1755369303"
-              alt="Sumer Dabby working on a development project" class="about-profile-image" width="300" height="300"
-              loading="lazy" decoding="async">
-          </div>
-        </div>
-      </section>
+      <div data-include="./components/sections/about/index.html"></div>
 
       <!-- Contact Section -->
-      <section id="contact" class="section" aria-labelledby="contact-title">
-        <h2 id="contact-title" class="section-title">Get In Touch</h2>
-
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>Let's Build Something Great Together</h3>
-            <p>
-              I'm always excited to work on new projects and collaborate with amazing people.
-              Whether you need a custom Shopify solution, web application, or technical consultation,
-              I'm here to help turn your vision into reality.
-            </p>
-
-            <div class="contact-methods">
-              <div class="contact-method">
-                <div class="contact-icon" aria-hidden="true">📧</div>
-                <div class="contact-details">
-                  <h4>Email</h4>
-                  <a href="mailto:sumerdabby123@gmail.com" aria-label="Send email to sumerdabby123@gmail.com">
-                    sumerdabby123@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <div class="contact-method">
-                <div class="contact-icon" aria-hidden="true">📱</div>
-                <div class="contact-details">
-                  <h4>Phone</h4>
-                  <a href="tel:+919646865149" aria-label="Call +91 9646865149">
-                    +91 9646865149
-                  </a>
-                </div>
-              </div>
-
-              <div class="contact-method">
-                <div class="contact-icon" aria-hidden="true">💼</div>
-                <div class="contact-details">
-                  <h4>LinkedIn</h4>
-                  <a href="https://www.linkedin.com/in/sumer-dabby-03a5b2175" target="_blank" rel="noopener noreferrer"
-                    aria-label="Connect on LinkedIn (opens in new tab)">
-                    Connect with me
-                  </a>
-                </div>
-              </div>
-
-              <div class="contact-method">
-                <div class="contact-icon" aria-hidden="true">📍</div>
-                <div class="contact-details">
-                  <h4>Location</h4>
-                  <span>Ludhiana & Mohali, Punjab, India</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="availability-info">
-              <h4>Availability</h4>
-              <p>Currently available for:</p>
-              <ul>
-                <li>Freelance projects</li>
-                <li>Full-time opportunities</li>
-                <li>Technical consultations</li>
-                <li>Shopify development services</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="contact-form-section">
-            <div class="quick-contact">
-              <h3>Quick Contact</h3>
-              <p>Ready to start your project? Get in touch using any of the methods listed, or send me a direct message.
-              </p>
-
-              <div class="quick-contact-buttons">
-                <button type="button" class="btn send-project-inquiry-btn" aria-label="Open project inquiry form popup">
-                  Send Project Inquiry
-                </button>
-                <a href="https://wa.me/919646865149?text=Hi%20Sumer,%20I'd%20like%20to%20discuss%20a%20project%20with%20you."
-                  target="_blank" rel="noopener noreferrer" class="btn btn-outline"
-                  aria-label="Send WhatsApp message (opens in new tab)">
-                  WhatsApp Message
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div data-include="./components/sections/contact/index.html"></div>
     </div>
 
-    <!-- Image Preview Modal -->
-    <div id="imagePreviewModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle"
-      aria-modal="true">
-      <div class="modal-content">
-        <button class="close-modal" aria-label="Close image preview">&times;</button>
-        <img id="modalImage" src="" alt="Project preview image" />
-      </div>
-    </div>
-
-    <!-- Project Inquiry Modal -->
-    <div id="projectInquiryModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="projectInquiryTitle"
-      aria-modal="true">
-      <div class="modal-content">
-        <button class="close-modal" aria-label="Close project inquiry form">&times;</button>
-        <h2 id="projectInquiryTitle">Project Inquiry Form</h2>
-        <form id="inquiryForm" autocomplete="off">
-          <label for="nameInput">Name *</label>
-          <input type="text" id="nameInput" name="name" placeholder="Your full name" required>
-
-          <label for="emailInput">Email *</label>
-          <input type="email" id="emailInput" name="email" placeholder="you@example.com" required>
-
-          <label for="mobileInput">Mobile *</label>
-          <input type="tel" id="mobileInput" name="mobile" placeholder="Your phone number" pattern="[0-9]{10}" required>
-
-          <label for="subjectInput">Subject *</label>
-          <input type="text" id="subjectInput" name="subject" placeholder="Subject of your inquiry" required>
-
-          <label for="messageInput">Message *</label>
-          <textarea id="messageInput" name="message" placeholder="Write your message here..." rows="4"
-            required></textarea>
-
-          <button type="submit" class="btn">Send Inquiry</button>
-        </form>
-        <div id="formStatus" style="margin-top: 1rem; text-align: center;"></div>
-      </div>
-    </div>
   </main>
 
-  <div data-include="./components/footer/footer-default.html"></div>
+  <div data-include="./components/footer/index.html"></div>
 
+  <!-- Component Loader -->
+  <script src="./js/component-loader.js"></script>
+  
+  <!-- Common Modal Component -->
+  <div data-include="./components/common/modal/index.html"></div>
+  
   <!-- JavaScript for enhanced functionality -->
   <script src="./js/index.js"></script>
 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug Test - Sumer Dabby Portfolio</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .debug-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .debug-section {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: 2px solid var(--main);
+      border-radius: var(--border-radius);
+    }
+    
+    .debug-title {
+      color: var(--main);
+      margin-bottom: 1rem;
+    }
+    
+    .debug-log {
+      background: #000;
+      color: #0f0;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      font-family: monospace;
+      font-size: 0.9rem;
+      max-height: 300px;
+      overflow-y: auto;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="debug-container">
+    <h1 class="debug-title">Debug Test Page</h1>
+    
+    <!-- Debug Log -->
+    <div class="debug-section">
+      <h2>Debug Log</h2>
+      <div class="debug-log" id="debugLog">
+        <div>Starting debug test...</div>
+      </div>
+    </div>
+    
+    <!-- Test Projects Section -->
+    <div class="debug-section">
+      <h2>Projects Section Test</h2>
+      <div data-include="./components/sections/projects/index.html"></div>
+    </div>
+    
+    <!-- Test Modal -->
+    <div class="debug-section">
+      <h2>Modal Test</h2>
+      <button onclick="testModal()" class="btn">Test Modal</button>
+      <button onclick="testImageModal()" class="btn">Test Image Modal</button>
+    </div>
+  </div>
+  
+  <!-- Load Modal Component -->
+  <div data-include="./components/common/modal/index.html"></div>
+  
+  <script src="./js/component-loader.js"></script>
+  <script>
+    function log(message) {
+      const debugLog = document.getElementById('debugLog');
+      const timestamp = new Date().toLocaleTimeString();
+      debugLog.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+      debugLog.scrollTop = debugLog.scrollHeight;
+      console.log(message);
+    }
+    
+    function testModal() {
+      log('Testing modal...');
+      if (window.modalManager) {
+        log('Modal manager found');
+        window.modalManager.openContent('<h3>Test Modal</h3><p>This is a test modal.</p>', 'Test Modal');
+        log('Modal opened');
+      } else {
+        log('ERROR: Modal manager not found');
+      }
+    }
+    
+    function testImageModal() {
+      log('Testing image modal...');
+      if (window.modalManager) {
+        log('Modal manager found');
+        window.modalManager.openImagePreview('https://via.placeholder.com/400x300/2a2d32/b489fd?text=Test+Image', 'Test Image');
+        log('Image modal opened');
+      } else {
+        log('ERROR: Modal manager not found');
+      }
+    }
+    
+    // Monitor component loading
+    document.addEventListener('DOMContentLoaded', function() {
+      log('DOM loaded');
+      
+      // Check for component loader
+      if (window.componentLoader) {
+        log('Component loader found');
+      } else {
+        log('ERROR: Component loader not found');
+      }
+      
+      // Check for modal manager
+      const checkModal = setInterval(() => {
+        if (window.modalManager) {
+          log('Modal manager found');
+          clearInterval(checkModal);
+        }
+      }, 100);
+      
+          // Check for projects grid
+    const checkProjects = setInterval(() => {
+      const projectsGrid = document.getElementById('projectsGrid');
+      if (projectsGrid) {
+        log('Projects grid found');
+        log(`Projects grid children: ${projectsGrid.children.length}`);
+        
+        // Check again after a delay to see if projects loaded
+        setTimeout(() => {
+          log(`Projects grid children after delay: ${projectsGrid.children.length}`);
+          if (projectsGrid.children.length === 0) {
+            log('WARNING: No projects found in grid');
+          }
+        }, 1000);
+        
+        clearInterval(checkProjects);
+      }
+    }, 100);
+    });
+    
+    // Override console.log to also log to our debug log
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      log(args.join(' '));
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* Header Component Styles */
+.header-component {
+  position: sticky;
+  top: 0;
+  background: rgba(35, 38, 43, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  padding: 1rem 0;
+  animation: slideDown 0.6s ease forwards;
+}
+
+.header-content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--main);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color var(--transition);
+}
+
+.logo:hover {
+  color: var(--accent);
+}
+
+.header-component nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-component nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color var(--transition);
+}
+
+.header-component nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--main);
+  transition: width var(--transition);
+  border-radius: 1px;
+}
+
+.header-component nav a:hover,
+.header-component nav a.active {
+  color: var(--accent);
+}
+
+.header-component nav a:hover::after,
+.header-component nav a.active::after {
+  width: 100%;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background: var(--text);
+  margin: 2px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger-menu:hover .hamburger-line {
+  background: var(--main);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .hamburger-menu {
+    display: flex;
+  }
+  
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(35, 38, 43, 0.98);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .main-nav.active {
+    left: 0;
+  }
+  
+  .main-nav ul {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .main-nav a {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    display: block;
+  }
+  
+  .main-nav a::after {
+    display: none;
+  }
+  
+  .main-nav a:hover,
+  .main-nav a.active {
+    color: var(--main);
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .main-nav ul {
+    gap: 1.5rem;
+  }
+  
+  .main-nav a {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-menu {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .hamburger-line {
+    width: 20px;
+    height: 2px;
+  }
+  
+  .main-nav ul {
+    gap: 1rem;
+  }
+  
+  .main-nav a {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+  }
+}

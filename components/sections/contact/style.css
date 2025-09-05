@@ -1,0 +1,221 @@
+/* Contact Section Component Styles */
+.contact-section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.section-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--main);
+  text-align: center;
+  position: relative;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--main);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: rgba(245, 245, 250, 0.8);
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.section-content {
+  margin-top: 2rem;
+}
+
+.section-content--two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contact-info h3 {
+  color: var(--main);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-methods {
+  margin: 2rem 0;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--panel);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.contact-method:hover {
+  border-color: var(--main);
+  box-shadow: 0 2px 8px rgba(180, 137, 253, 0.15);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(180, 137, 253, 0.1);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact-details h4 {
+  color: var(--main);
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.contact-details a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.contact-details a:hover {
+  color: var(--main);
+}
+
+.availability-info {
+  background: var(--panel);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--main);
+}
+
+.availability-info h4 {
+  color: var(--main);
+  margin-bottom: 0.5rem;
+}
+
+.section-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.section-list--checkmarks li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: rgba(245, 245, 250, 0.8);
+}
+
+.section-list--checkmarks li::before {
+  content: '✓';
+  color: var(--main);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.quick-contact {
+  background: var(--panel);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border);
+  height: fit-content;
+}
+
+.quick-contact h3 {
+  color: var(--main);
+  margin-bottom: 1rem;
+}
+
+.section-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.section-buttons--stacked {
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-buttons--stacked .btn {
+  width: 100%;
+  max-width: 280px;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .section-content--two-column {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .contact-method {
+    padding: 0.75rem;
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .quick-contact {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 2rem 0;
+  }
+  
+  .contact-method {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .section-buttons--stacked .btn {
+    max-width: 100%;
+  }
+}

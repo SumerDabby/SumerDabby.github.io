@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Test - Sumer Dabby Portfolio</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .test-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .test-section {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: 2px dashed var(--main);
+      border-radius: var(--border-radius);
+    }
+    
+    .test-title {
+      color: var(--main);
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="test-container">
+    <h1 class="test-title">Component Test Page</h1>
+    
+    <!-- Test Header -->
+    <div class="test-section">
+      <h2>Header Component Test</h2>
+      <div data-include="./components/header/index.html"></div>
+    </div>
+    
+    <!-- Test Hero -->
+    <div class="test-section">
+      <h2>Hero Component Test</h2>
+      <div data-include="./components/sections/hero/index.html"></div>
+    </div>
+    
+    <!-- Test Process -->
+    <div class="test-section">
+      <h2>Process Component Test</h2>
+      <div data-include="./components/sections/process/index.html"></div>
+    </div>
+    
+    <!-- Test Modal -->
+    <div class="test-section">
+      <h2>Modal Component Test</h2>
+      <button onclick="testModal()" class="btn">Test Modal</button>
+      <button onclick="testImageModal()" class="btn">Test Image Modal</button>
+    </div>
+    
+    <!-- Test Footer -->
+    <div class="test-section">
+      <h2>Footer Component Test</h2>
+      <div data-include="./components/footer/index.html"></div>
+    </div>
+  </div>
+  
+  <!-- Load Components -->
+  <div data-include="./components/common/modal/index.html"></div>
+  
+  <script src="./js/component-loader.js"></script>
+  <script>
+    function testModal() {
+      if (window.modalManager) {
+        window.modalManager.openContent('<h3>Test Modal</h3><p>This is a test modal to verify the component system is working.</p>', 'Test Modal');
+      } else {
+        console.error('Modal manager not available');
+      }
+    }
+    
+    function testImageModal() {
+      if (window.modalManager) {
+        window.modalManager.openImagePreview('https://cdn.shopify.com/s/files/1/0642/3881/3282/files/sumerdabby.jpg?v=1755369303', 'Test Image');
+      } else {
+        console.error('Modal manager not available');
+      }
+    }
+    
+    // Log component loading status
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('Test page loaded');
+      
+      const checkComponents = setInterval(() => {
+        if (window.componentLoader && window.modalManager) {
+          clearInterval(checkComponents);
+          console.log('All components loaded successfully');
+        }
+      }, 100);
+    });
+  </script>
+</body>
+</html>
