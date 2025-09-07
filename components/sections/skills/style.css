@@ -1,3 +1,4 @@
+/* Skills section styles removed */
 /* Skills Section Component Styles */
 .skills-section {
   padding: 4rem 0;
@@ -124,15 +125,15 @@
   .section-container {
     padding: 0 1rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .section-grid--auto-fit {
     grid-template-columns: 1fr;
   }
-  
+
   .section-card {
     padding: 1.5rem;
   }
@@ -142,11 +143,11 @@
   .skills-section {
     padding: 2rem 0;
   }
-  
+
   .section-card {
     padding: 1rem;
   }
-  
+
   .skill-tag {
     font-size: 0.8rem;
     padding: 0.25rem 0.6rem;

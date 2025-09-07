@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
       text-align: center;
       margin-bottom: 2rem;
     }
-    
+
     .test-breakpoint {
       position: fixed;
       top: 0;
@@ -25,7 +26,7 @@
       font-family: monospace;
       z-index: 9999;
     }
-    
+
     .test-section {
       margin: 2rem 0;
       padding: 1rem;
@@ -34,29 +35,30 @@
     }
   </style>
 </head>
+
 <body>
   <div class="test-breakpoint" id="breakpointIndicator">
     <span id="currentBreakpoint">Loading...</span>
   </div>
-  
+
   <div class="test-header">
     <h1>Responsive Design Test</h1>
     <p>Test all components across different screen sizes</p>
   </div>
-  
+
   <main>
     <!-- Hero Section Test -->
     <div class="test-section">
       <h2>Hero Section Test</h2>
       <div data-include="./components/sections/hero/index.html"></div>
     </div>
-    
+
     <!-- Process Section Test -->
     <div class="test-section">
       <h2>Process Section Test</h2>
       <div data-include="./components/sections/process/index.html"></div>
     </div>
-    
+
     <!-- Modal Test -->
     <div class="test-section">
       <h2>Modal Test</h2>
@@ -64,7 +66,7 @@
       <button onclick="testFormModal()" class="btn">Test Form Modal</button>
       <button onclick="testContentModal()" class="btn">Test Content Modal</button>
     </div>
-    
+
     <!-- Grid System Test -->
     <div class="test-section">
       <h2>Grid System Test</h2>
@@ -75,7 +77,7 @@
         <div class="section-card">Card 4</div>
       </div>
     </div>
-    
+
     <!-- Button Test -->
     <div class="test-section">
       <h2>Button Test</h2>
@@ -93,17 +95,17 @@
       </div>
     </div>
   </main>
-  
+
   <!-- Common Modal Component -->
   <div data-include="./components/common/modal/index.html"></div>
-  
+
   <script src="./js/component-loader.js"></script>
   <script>
     // Breakpoint indicator
     function updateBreakpointIndicator() {
       const width = window.innerWidth;
       let breakpoint = '';
-      
+
       if (width >= 1200) {
         breakpoint = 'Desktop (1200px+)';
       } else if (width >= 1024) {
@@ -115,15 +117,15 @@
       } else {
         breakpoint = 'Mobile Small (<480px)';
       }
-      
-      document.getElementById('currentBreakpoint').textContent = 
+
+      document.getElementById('currentBreakpoint').textContent =
         `${breakpoint} - ${width}px`;
     }
-    
+
     // Update on load and resize
     updateBreakpointIndicator();
     window.addEventListener('resize', updateBreakpointIndicator);
-    
+
     // Modal test functions
     function testImageModal() {
       if (window.modalManager) {
@@ -133,7 +135,7 @@
         );
       }
     }
-    
+
     function testFormModal() {
       if (window.modalManager) {
         const formHTML = `
@@ -148,7 +150,7 @@
         window.modalManager.openForm(formHTML, 'Test Form');
       }
     }
-    
+
     function testContentModal() {
       if (window.modalManager) {
         const contentHTML = `
@@ -161,4 +163,172 @@
     }
   </script>
 </body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Test - Sumer Dabby Portfolio</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    /* Test page specific styles */
+    .test-header {
+      background: var(--main);
+      color: var(--bg);
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .test-breakpoint {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 0.5rem;
+      font-family: monospace;
+      z-index: 9999;
+    }
+
+    .test-section {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: 2px dashed var(--main);
+      border-radius: var(--border-radius);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="test-breakpoint" id="breakpointIndicator">
+    <span id="currentBreakpoint">Loading...</span>
+  </div>
+
+  <div class="test-header">
+    <h1>Responsive Design Test</h1>
+    <p>Test all components across different screen sizes</p>
+  </div>
+
+  <main>
+    <!-- Hero Section Test -->
+    <div class="test-section">
+      <h2>Hero Section Test</h2>
+      <div data-include="./components/sections/hero/index.html"></div>
+    </div>
+
+    <!-- Process Section Test -->
+    <div class="test-section">
+      <h2>Process Section Test</h2>
+      <div data-include="./components/sections/process/index.html"></div>
+    </div>
+
+    <!-- Modal Test -->
+    <div class="test-section">
+      <h2>Modal Test</h2>
+      <button onclick="testImageModal()" class="btn">Test Image Modal</button>
+      <button onclick="testFormModal()" class="btn">Test Form Modal</button>
+      <button onclick="testContentModal()" class="btn">Test Content Modal</button>
+    </div>
+
+    <!-- Grid System Test -->
+    <div class="test-section">
+      <h2>Grid System Test</h2>
+      <div class="section-grid section-grid--four-col">
+        <div class="section-card">Card 1</div>
+        <div class="section-card">Card 2</div>
+        <div class="section-card">Card 3</div>
+        <div class="section-card">Card 4</div>
+      </div>
+    </div>
+
+    <!-- Button Test -->
+    <div class="test-section">
+      <h2>Button Test</h2>
+      <div class="section-buttons">
+        <button class="btn">Primary Button</button>
+        <button class="btn btn-outline">Outline Button</button>
+        <button class="btn btn-small">Small Button</button>
+      </div>
+      <div class="section-buttons section-buttons--centered">
+        <button class="btn">Centered Button</button>
+      </div>
+      <div class="section-buttons section-buttons--stacked">
+        <button class="btn">Stacked Button 1</button>
+        <button class="btn btn-outline">Stacked Button 2</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Common Modal Component -->
+  <div data-include="./components/common/modal/index.html"></div>
+
+  <script src="./js/component-loader.js"></script>
+  <script>
+    // Breakpoint indicator
+    function updateBreakpointIndicator() {
+      const width = window.innerWidth;
+      let breakpoint = '';
+
+      if (width >= 1200) {
+        breakpoint = 'Desktop (1200px+)';
+      } else if (width >= 1024) {
+        breakpoint = 'Large Tablet (1024px+)';
+      } else if (width >= 768) {
+        breakpoint = 'Tablet (768px+)';
+      } else if (width >= 480) {
+        breakpoint = 'Mobile Large (480px+)';
+      } else {
+        breakpoint = 'Mobile Small (<480px)';
+      }
+
+      document.getElementById('currentBreakpoint').textContent =
+        `${breakpoint} - ${width}px`;
+    }
+
+    // Update on load and resize
+    updateBreakpointIndicator();
+    window.addEventListener('resize', updateBreakpointIndicator);
+
+    // Modal test functions
+    function testImageModal() {
+      if (window.modalManager) {
+        window.modalManager.openImagePreview(
+          'https://cdn.shopify.com/s/files/1/0642/3881/3282/files/sumerdabby.jpg?v=1755369303',
+          'Test Image'
+        );
+      }
+    }
+
+    function testFormModal() {
+      if (window.modalManager) {
+        const formHTML = `
+          <form>
+            <label for="testName">Name</label>
+            <input type="text" id="testName" name="name" required>
+            <label for="testEmail">Email</label>
+            <input type="email" id="testEmail" name="email" required>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        `;
+        window.modalManager.openForm(formHTML, 'Test Form');
+      }
+    }
+
+    function testContentModal() {
+      if (window.modalManager) {
+        const contentHTML = `
+          <h3>Test Content</h3>
+          <p>This is a test modal with some content to check responsive behavior.</p>
+          <p>It should adapt to different screen sizes properly.</p>
+        `;
+        window.modalManager.openContent(contentHTML, 'Test Content');
+      }
+    }
+  </script>
+</body>
+
 </html>

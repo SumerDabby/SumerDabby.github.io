@@ -1,3 +1,4 @@
+/* Process section styles removed */
 /* Process Section Component Styles */
 .process-section {
   padding: 4rem 0;
@@ -145,19 +146,19 @@
   .section-container {
     padding: 0 1rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .section-grid--four-col {
     grid-template-columns: 1fr;
   }
-  
+
   .section-card {
     padding: 1.5rem;
   }
-  
+
   .step-number {
     width: 50px;
     height: 50px;
@@ -169,15 +170,15 @@
   .process-section {
     padding: 2rem 0;
   }
-  
+
   .section-card {
     padding: 1rem;
   }
-  
+
   .step-content h3 {
     font-size: 1.1rem;
   }
-  
+
   .step-content p {
     font-size: 0.9rem;
   }

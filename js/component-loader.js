@@ -1,5 +1,24 @@
 // Component Loader - Handles loading components with their CSS and JS
 class ComponentLoader {
+  async openEnquiryModal() {
+    // Load enquiry modal HTML
+    const enquiryHtmlResponse = await fetch('components/modal/enquiry/index.html');
+    const enquiryHtml = await enquiryHtmlResponse.text();
+    // Load enquiry modal CSS
+    await this.loadCSS('components/modal/enquiry/style.css');
+    // Load enquiry modal JS
+    await this.loadJS('components/modal/enquiry/script.js');
+    // Open modal using modalManager, and bind form handler after content is injected
+    if (window.modalManager) {
+      window.modalManager.openForm(enquiryHtml, 'Project Inquiry Form', {
+        onOpen: function() {
+          if (window.bindEnquiryFormHandler) window.bindEnquiryFormHandler();
+        }
+      });
+    } else {
+      alert('Modal system not loaded.');
+    }
+  }
   constructor() {
     this.loadedComponents = new Set();
     this.loadedStyles = new Set();
@@ -125,124 +144,32 @@ class ComponentLoader {
     this.setupGlobalEventListeners();
     
     // Initialize header functionality after components are loaded
-    setTimeout(() => {
-      if (typeof initHeader === 'function') {
-        initHeader();
-      }
-    }, 500);
+    if (typeof initHeader === 'function') {
+      initHeader();
+    }
   }
   
   setupGlobalEventListeners() {
     // Set up event delegation for dynamically loaded content
     document.addEventListener('click', (e) => {
-      // Handle image preview clicks
-      if (e.target.classList.contains('preview-image')) {
-        e.preventDefault();
-        if (window.modalManager) {
-          window.modalManager.openImagePreview(e.target.src, e.target.alt);
-        }
-      }
-      
       // Handle project inquiry buttons
-      if (e.target.classList.contains('lets-work-together-btn') || 
-          e.target.classList.contains('send-project-inquiry-btn') ||
-          e.target.classList.contains('project-connect-btn')) {
+      if (
+        e.target.classList.contains('lets-work-together-btn') ||
+        e.target.classList.contains('send-project-inquiry-btn') ||
+        e.target.classList.contains('project-connect-btn') ||
+        e.target.textContent.trim().toLowerCase().includes('connect now') ||
+        e.target.textContent.trim().toLowerCase().includes('lets work together') ||
+        e.target.textContent.trim().toLowerCase().includes('send project enquery')
+      ) {
         e.preventDefault();
-        if (window.openGeneralInquiryModal) {
-          window.openGeneralInquiryModal();
+        if (window.componentLoader && typeof window.componentLoader.openEnquiryModal === 'function') {
+          window.componentLoader.openEnquiryModal();
         }
       }
     });
   }
   
-  openInquiryModal() {
-    const inquiryFormHTML = `
-      <form id="inquiryForm" autocomplete="off">
-        <label for="nameInput">Name *</label>
-        <input type="text" id="nameInput" name="name" placeholder="Your full name" required>
-
-        <label for="emailInput">Email *</label>
-        <input type="email" id="emailInput" name="email" placeholder="you@example.com" required>
-
-        <label for="mobileInput">Mobile *</label>
-        <input type="tel" id="mobileInput" name="mobile" placeholder="Your phone number" pattern="[0-9]{10}" required>
-
-        <label for="subjectInput">Subject *</label>
-        <input type="text" id="subjectInput" name="subject" placeholder="Subject of your inquiry" required>
-
-        <label for="messageInput">Message *</label>
-        <textarea id="messageInput" name="message" placeholder="Write your message here..." rows="4" required></textarea>
-
-        <button type="submit" class="btn">Send Inquiry</button>
-      </form>
-      <div id="formStatus" class="modal-status"></div>
-    `;
-    
-    window.modalManager.openForm(inquiryFormHTML, 'Project Inquiry Form');
-    
-    // Set up form handling after modal opens
-    setTimeout(() => {
-      const form = document.getElementById('inquiryForm');
-      if (form) {
-        form.addEventListener('submit', this.handleFormSubmit);
-        document.getElementById('nameInput').focus();
-      }
-    }, 100);
-  }
-  
-  handleFormSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const formStatus = document.getElementById('formStatus');
-    
-    // Collect form data
-    const formData = {
-      name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      mobile: form.mobile.value.trim(),
-      subject: form.subject.value.trim(),
-      message: form.message.value.trim()
-    };
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.mobile || !formData.subject || !formData.message) {
-      formStatus.textContent = 'Please fill in all required fields.';
-      formStatus.className = 'modal-status error';
-      return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      formStatus.textContent = 'Please enter a valid email address.';
-      formStatus.className = 'modal-status error';
-      return;
-    }
-    
-    // Mobile validation
-    const mobileRegex = /^[0-9]{10}$/;
-    if (!mobileRegex.test(formData.mobile)) {
-      formStatus.textContent = 'Please enter a valid 10-digit mobile number.';
-      formStatus.className = 'modal-status error';
-      return;
-    }
-    
-    // Show loading state
-    formStatus.textContent = 'Sending inquiry...';
-    formStatus.className = 'modal-status';
-    
-    // Simulate form submission
-    setTimeout(() => {
-      formStatus.textContent = 'Thank you! Your inquiry has been sent successfully. I\'ll get back to you soon.';
-      formStatus.className = 'modal-status success';
-      form.reset();
-      
-      // Close modal after 3 seconds
-      setTimeout(() => {
-        window.modalManager.close();
-      }, 3000);
-    }, 1500);
-  }
+  // Old modal system removed. New modal system will be used.
 }
 
 // Initialize component loader

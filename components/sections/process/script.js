@@ -1,3 +1,4 @@
+// Process section component removed
 // Process Section Component Script
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Process section component loaded');

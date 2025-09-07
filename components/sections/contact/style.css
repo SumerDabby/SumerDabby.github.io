@@ -1,3 +1,4 @@
+/* Contact section styles removed */
 /* Contact Section Component Styles */
 .contact-section {
   padding: 4rem 0;
@@ -184,21 +185,21 @@
   .section-container {
     padding: 0 1rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .contact-method {
     padding: 0.75rem;
   }
-  
+
   .contact-icon {
     width: 40px;
     height: 40px;
     font-size: 1.2rem;
   }
-  
+
   .quick-contact {
     padding: 1.5rem;
   }
@@ -208,13 +209,13 @@
   .contact-section {
     padding: 2rem 0;
   }
-  
+
   .contact-method {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
-  
+
   .section-buttons--stacked .btn {
     max-width: 100%;
   }

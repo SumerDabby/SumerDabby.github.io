@@ -6,18 +6,33 @@ function initHeader() {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const mainNav = document.querySelector('.main-nav');
   
-  console.log('Hamburger menu element:', hamburgerMenu);
-  console.log('Main nav element:', mainNav);
+  if (!hamburgerMenu) {
+    console.error('Hamburger menu button not found!');
+  } else {
+    console.log('Hamburger menu element found:', hamburgerMenu);
+  }
+  if (!mainNav) {
+    console.error('Main navigation not found!');
+  } else {
+    console.log('Main nav element found:', mainNav);
+  }
   
   if (hamburgerMenu && mainNav) {
+    console.log('Mobile menu JS is active.');
     hamburgerMenu.addEventListener('click', function() {
       hamburgerMenu.classList.toggle('active');
       mainNav.classList.toggle('active');
-      
+      const header = document.querySelector('.header-component');
+      if (mainNav.classList.contains('active')) {
+        header.classList.add('menuOpen');
+        header.classList.remove('menuClose');
+      } else {
+        header.classList.remove('menuOpen');
+        header.classList.add('menuClose');
+      }
       // Update aria-expanded
       const isExpanded = mainNav.classList.contains('active');
       hamburgerMenu.setAttribute('aria-expanded', isExpanded);
-      
       // Prevent body scroll when menu is open
       document.body.style.overflow = isExpanded ? 'hidden' : '';
     });
@@ -30,6 +45,9 @@ function initHeader() {
         mainNav.classList.remove('active');
         hamburgerMenu.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        const header = document.querySelector('.header-component');
+        header.classList.remove('menuOpen');
+        header.classList.add('menuClose');
       });
     });
     
@@ -40,6 +58,9 @@ function initHeader() {
         mainNav.classList.remove('active');
         hamburgerMenu.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        const header = document.querySelector('.header-component');
+        header.classList.remove('menuOpen');
+        header.classList.add('menuClose');
       }
     });
     
@@ -50,6 +71,9 @@ function initHeader() {
         mainNav.classList.remove('active');
         hamburgerMenu.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        const header = document.querySelector('.header-component');
+        header.classList.remove('menuOpen');
+        header.classList.add('menuClose');
       }
     });
   }
@@ -101,7 +125,4 @@ function initHeader() {
 }
 
 // Initialize header when DOM is ready
-document.addEventListener('DOMContentLoaded', initHeader);
-
-// Also try to initialize after a delay in case components are loaded dynamically
-setTimeout(initHeader, 1000);
+// Only call initHeader from component-loader.js after all components are loaded

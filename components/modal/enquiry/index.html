@@ -1,0 +1,20 @@
+<!-- Enquiry Modal Content -->
+<form id="enquiryForm" autocomplete="off">
+    <label for="nameInput">Name </label>
+    <input type="text" id="nameInput" name="name" placeholder="Your full name">
+
+    <label for="emailInput">Email *</label>
+    <input type="email" id="emailInput" name="email" placeholder="you@example.com" required>
+
+    <label for="mobileInput">Mobile </label>
+    <input type="tel" id="mobileInput" name="mobile" placeholder="Your phone number" pattern="[0-9]{10}">
+
+    <label for="subjectInput">Subject </label>
+    <input type="text" id="subjectInput" name="subject" placeholder="Subject of your inquiry">
+
+    <label for="messageInput">Message </label>
+    <textarea id="messageInput" name="message" placeholder="Write your message here..." rows="4"></textarea>
+
+    <button type="submit" class="btn">Send Inquiry</button>
+</form>
+<div id="formStatus" class="modal-status"></div>

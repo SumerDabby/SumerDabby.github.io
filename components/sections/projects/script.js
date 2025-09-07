@@ -1,3 +1,4 @@
+// Projects section component removed
 // Projects Section Component Script
 console.log('Projects section script loaded');
 

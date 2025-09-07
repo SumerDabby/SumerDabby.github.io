@@ -155,8 +155,10 @@ class ModalManager {
     this.open(content, { title: 'Image Preview' });
   }
   
-  openForm(formHTML, title = 'Form') {
-    this.open(formHTML, { title });
+  openForm(formHTML, title = 'Form', options = {}) {
+    // Merge title and any other options (like onOpen)
+    const opts = Object.assign({}, options, { title });
+    this.open(formHTML, opts);
   }
   
   openContent(contentHTML, title = '') {

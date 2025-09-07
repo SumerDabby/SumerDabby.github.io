@@ -19,7 +19,7 @@
 
   <!-- Geo Tags -->
   <meta name="geo.region" content="IN-PB">
-  <meta name="geo.placename" content="Ludhiana, Punjab, India">
+  <meta name="geo.placename" content="Ludhiana, Punjab, India" 3>
   <meta name="geo.position" content="30.9010;75.8573">
   <meta name="ICBM" content="30.9010, 75.8573">
 
@@ -87,7 +87,9 @@
 
   <main id="main" role="main">
     <!-- Hero Section -->
-    <div data-include="./components/sections/hero/index.html"></div>
+    <div id="home">
+      <div data-include="./components/sections/hero/index.html"></div>
+    </div>
 
     <!-- Quote Section -->
     <section class="quote" role="complementary">
@@ -98,13 +100,18 @@
     <!-- Main Content Area -->
     <div class="main-content">
       <!-- Projects Section -->
-      <div data-include="./components/sections/projects/index.html"></div>
-
+      <div id="projects">
+        <div data-include="./components/sections/projects/index.html"></div>
+      </div>
       <!-- Process Section -->
-      <div data-include="./components/sections/process/index.html"></div>
+      <div id="process">
+        <div data-include="./components/sections/process/index.html"></div>
+      </div>
 
       <!-- Skills Section -->
-      <div data-include="./components/sections/skills/index.html"></div>
+      <div id="skills">
+        <div data-include="./components/sections/skills/index.html"></div>
+      </div>
 
       <!-- GitHub Projects Section -->
       <!-- <div data-include="./components/sections/github-projects.html"></div> -->
@@ -116,10 +123,13 @@
       <!-- <div data-include="./components/sections/testimonials.html"></div> -->
 
       <!-- About Section -->
-      <div data-include="./components/sections/about/index.html"></div>
-
+      <div id="about">
+        <div data-include="./components/sections/about/index.html"></div>
+      </div>
       <!-- Contact Section -->
-      <div data-include="./components/sections/contact/index.html"></div>
+      <div id="contact">
+        <div data-include="./components/sections/contact/index.html"></div>
+      </div>
     </div>
 
   </main>
@@ -128,10 +138,10 @@
 
   <!-- Component Loader -->
   <script src="./js/component-loader.js"></script>
-  
+
   <!-- Common Modal Component -->
   <div data-include="./components/common/modal/index.html"></div>
-  
+
   <!-- JavaScript for enhanced functionality -->
   <script src="./js/index.js"></script>
 

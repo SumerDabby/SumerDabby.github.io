@@ -1,3 +1,4 @@
+// Hero section component removed
 // Hero Section Component Script
 document.addEventListener('DOMContentLoaded', function() {
   // Add any hero-specific JavaScript functionality here

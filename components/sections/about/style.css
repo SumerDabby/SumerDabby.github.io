@@ -1,3 +1,4 @@
+/* About section styles removed */
 /* About Section Component Styles */
 .about-section {
   padding: 4rem 0;
@@ -147,16 +148,16 @@
   .section-container {
     padding: 0 1rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .experience-item,
   .education-item {
     padding: 1rem;
   }
-  
+
   .cta-section {
     padding: 1.5rem;
   }
@@ -166,11 +167,11 @@
   .about-section {
     padding: 2rem 0;
   }
-  
+
   .about-text h3 {
     font-size: 1.1rem;
   }
-  
+
   .about-text h4 {
     font-size: 1rem;
   }

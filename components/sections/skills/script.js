@@ -1,3 +1,4 @@
+// Skills section component removed
 // Skills Section Component Script
 document.addEventListener('DOMContentLoaded', function() {
   console.log('Skills section component loaded');

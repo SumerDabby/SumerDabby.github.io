@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,19 @@
       margin: 0 auto;
       padding: 2rem;
     }
-    
+
     .test-section {
       margin: 2rem 0;
       padding: 1rem;
       border: 2px dashed var(--main);
       border-radius: var(--border-radius);
     }
-    
+
     .test-title {
       color: var(--main);
       margin-bottom: 1rem;
     }
-    
+
     .test-status {
       position: fixed;
       top: 10px;
@@ -37,57 +38,58 @@
     }
   </style>
 </head>
+
 <body>
   <div class="test-status" id="testStatus">
     <div>Loading Components...</div>
     <div id="componentStatus"></div>
   </div>
-  
+
   <div class="test-container">
     <h1 class="test-title">Complete Component Test</h1>
-    
+
     <!-- Test Header -->
     <div class="test-section">
       <h2>Header Component</h2>
       <div data-include="./components/header/index.html"></div>
     </div>
-    
+
     <!-- Test Hero -->
     <div class="test-section">
       <h2>Hero Component</h2>
       <div data-include="./components/sections/hero/index.html"></div>
     </div>
-    
+
     <!-- Test Projects -->
     <div class="test-section">
       <h2>Projects Component</h2>
       <div data-include="./components/sections/projects/index.html"></div>
     </div>
-    
+
     <!-- Test Process -->
     <div class="test-section">
       <h2>Process Component</h2>
       <div data-include="./components/sections/process/index.html"></div>
     </div>
-    
+
     <!-- Test Skills -->
     <div class="test-section">
       <h2>Skills Component</h2>
       <div data-include="./components/sections/skills/index.html"></div>
     </div>
-    
+
     <!-- Test About -->
     <div class="test-section">
       <h2>About Component</h2>
       <div data-include="./components/sections/about/index.html"></div>
     </div>
-    
+
     <!-- Test Contact -->
     <div class="test-section">
       <h2>Contact Component</h2>
       <div data-include="./components/sections/contact/index.html"></div>
     </div>
-    
+
     <!-- Test Modal -->
     <div class="test-section">
       <h2>Modal Component Test</h2>
@@ -95,39 +97,39 @@
       <button onclick="testFormModal()" class="btn">Test Form Modal</button>
       <button onclick="testContentModal()" class="btn">Test Content Modal</button>
     </div>
-    
+
     <!-- Test Footer -->
     <div class="test-section">
       <h2>Footer Component</h2>
       <div data-include="./components/footer/index.html"></div>
     </div>
   </div>
-  
+
   <!-- Load Modal Component -->
   <div data-include="./components/common/modal/index.html"></div>
-  
+
   <script src="./js/component-loader.js"></script>
   <script>
     let loadedComponents = 0;
     const totalComponents = 8; // header, hero, projects, process, skills, about, contact, footer
-    
+
     function updateStatus() {
       const statusDiv = document.getElementById('componentStatus');
       statusDiv.innerHTML = `Loaded: ${loadedComponents}/${totalComponents}<br>`;
-      
+
       if (window.componentLoader) {
         statusDiv.innerHTML += `Component Loader: ✅<br>`;
       } else {
         statusDiv.innerHTML += `Component Loader: ❌<br>`;
       }
-      
+
       if (window.modalManager) {
         statusDiv.innerHTML += `Modal Manager: ✅<br>`;
       } else {
         statusDiv.innerHTML += `Modal Manager: ❌<br>`;
       }
     }
-    
+
     function testImageModal() {
       if (window.modalManager) {
         window.modalManager.openImagePreview(
@@ -140,7 +142,7 @@
         alert('Modal manager not available');
       }
     }
-    
+
     function testFormModal() {
       if (window.modalManager) {
         const formHTML = `
@@ -159,7 +161,7 @@
         alert('Modal manager not available');
       }
     }
-    
+
     function testContentModal() {
       if (window.modalManager) {
         const contentHTML = `
@@ -174,20 +176,20 @@
         alert('Modal manager not available');
       }
     }
-    
+
     // Monitor component loading
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       console.log('Test page loaded');
       updateStatus();
-      
+
       // Check for component loading
       const checkComponents = setInterval(() => {
         updateStatus();
-        
+
         if (window.componentLoader && window.modalManager) {
           clearInterval(checkComponents);
           console.log('All components loaded successfully');
-          
+
           // Count loaded components
           const componentElements = document.querySelectorAll('[data-include]');
           loadedComponents = componentElements.length;
@@ -195,9 +197,10 @@
         }
       }, 100);
     });
-    
+
     // Update status every second
     setInterval(updateStatus, 1000);
   </script>
 </body>
+
 </html>

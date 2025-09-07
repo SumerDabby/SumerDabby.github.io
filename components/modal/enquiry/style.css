@@ -1,0 +1,39 @@
+/* Enquiry Modal Specific Styles */
+#enquiryForm label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+#enquiryForm input,
+#enquiryForm textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#enquiryForm .btn {
+    margin-top: 1rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-status {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.modal-status.error {
+    color: #d9534f;
+}
+
+.modal-status.success {
+    color: #28a745;
+}

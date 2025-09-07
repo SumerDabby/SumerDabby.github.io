@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
       margin: 0 auto;
       padding: 2rem;
     }
-    
+
     .debug-log {
       background: #000;
       color: #0f0;
@@ -25,27 +26,29 @@
     }
   </style>
 </head>
+
 <body>
   <div class="test-container">
     <h1>Test Projects Loading</h1>
-    
+
     <div class="debug-log" id="debugLog">
       <div>Starting test...</div>
     </div>
-    
+
     <!-- Test Projects Section -->
     <section class="projects-section" aria-labelledby="projects-title">
       <div class="section-container">
         <h2 id="projects-title" class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">A showcase of my recent work and projects that demonstrate my skills and expertise.</p>
-        
+        <p class="section-subtitle">A showcase of my recent work and projects that demonstrate my skills and expertise.
+        </p>
+
         <div class="section-grid section-grid--auto-fit" id="projectsGrid">
           <!-- Projects will be loaded dynamically -->
         </div>
       </div>
     </section>
   </div>
-  
+
   <script>
     function log(message) {
       const debugLog = document.getElementById('debugLog');
@@ -54,7 +57,7 @@
       debugLog.scrollTop = debugLog.scrollHeight;
       console.log(message);
     }
-    
+
     // Test JSON loading directly
     async function testJsonLoading() {
       log('Testing JSON loading...');
@@ -62,32 +65,32 @@
         const response = await fetch('./data/projects.json');
         log(`Response status: ${response.status}`);
         log(`Response ok: ${response.ok}`);
-        
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const projects = await response.json();
         log(`JSON loaded successfully: ${projects.length} projects`);
         log(`First project: ${projects[0].title}`);
-        
+
         // Test rendering
         renderProjects(projects);
-        
+
       } catch (error) {
         log(`ERROR loading JSON: ${error.message}`);
       }
     }
-    
+
     function renderProjects(projects) {
       const projectsGrid = document.getElementById('projectsGrid');
       if (!projectsGrid) {
         log('ERROR: Projects grid not found');
         return;
       }
-      
+
       log(`Rendering ${projects.length} projects...`);
-      
+
       projectsGrid.innerHTML = projects.map(project => `
         <div class="project-card">
           <img src="${project.image}" alt="${project.alt || project.title}" class="project-image preview-image" loading="lazy">
@@ -108,15 +111,16 @@
           </div>
         </div>
       `).join('');
-      
+
       log('Projects rendered successfully');
     }
-    
+
     // Start test when DOM is ready
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       log('DOM loaded');
       testJsonLoading();
     });
   </script>
 </body>
+
 </html>
